@@ -15,7 +15,18 @@ public class StartLevel : MonoBehaviour
     }
     public void OnGUI()
     {
+        Scene scene = SceneManager.GetActiveScene();
         if (GUI.Button(new Rect(10, 70, 50, 30), "Click"))
-            SceneManager.LoadScene("SampleScene");
+        {
+            if (scene.name == "Victory")
+            {
+                SceneManager.LoadScene("Start");
+            }
+
+            if (scene.name == "Start")
+            {
+                SceneManager.LoadScene("SampleScene");
+            }
+        }
     }
 }

@@ -13,6 +13,9 @@ public class SpawnColumna : MonoBehaviour
     void Start()
     {
         StartCoroutine(Spawner());
+        posicionx = Random.Range(-10, 10);
+        posicionz = Random.Range(-10, 10);
+        Instantiate(enemigo, new Vector3(posicionx, 4, posicionz), Quaternion.identity);
     }
 
     // Update is called once per frame
@@ -23,7 +26,7 @@ public class SpawnColumna : MonoBehaviour
 
     IEnumerator Spawner()
     {
-        for (float n = 0; n < 10; n++)
+        for (float n = 0; n < 9; n++)
         {
             posicionx = Random.Range(-10, 10);
             posicionz = Random.Range(-10, 10);
