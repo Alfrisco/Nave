@@ -6,10 +6,12 @@ public class Destruir : MonoBehaviour
 {
     public GameObject Esfera;
     private Esfera nave;
+    public AudioClip saw;
     // Start is called before the first frame update
     void Start()
     {
-
+        GetComponent<AudioSource>().playOnAwake = false;
+        GetComponent<AudioSource>().clip = saw;
     }
 
     void OnCollisionEnter(Collision collision)
